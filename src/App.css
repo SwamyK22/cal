@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+body{
+  margin: 0;
+  background: linear-gradient(to right, rgba(15, 255, 255, 0.76), rgba(18, 2, 240, 0.75));
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calculator{
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 6rem);
+  justify-content: center;
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.span_two{
+  grid-column: span 2;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.output{
+  grid-column: 1/-1;
+  background-color: rgba(0, 0, 0, 0.75);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0.75rem;
+}
+.output .pre_operand{
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+.output .cur_operand{
   color: white;
+  font-size: 2.5rem;
+}
+.calculator > button{
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculator > button:hover,
+.calculator > button:focus {
+  background-color: rgba(255, 255, 255, 0.9);
 }
